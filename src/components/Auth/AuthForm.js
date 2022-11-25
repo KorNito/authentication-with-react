@@ -37,8 +37,9 @@ const AuthForm = () => {
           },
         }
       ).then((res) => {
+        setIsLoading(false);
+
         if (res.ok) {
-          setIsLoading(false);
         } else {
           return res.json().then((data) => {
             let errorMessage = "Authentication failed";
